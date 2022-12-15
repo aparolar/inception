@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.3'
 
 services:
  mariadb_service:
@@ -8,7 +8,7 @@ services:
   networks:
    - inception_net
   volumes:
-   - db_vol: /var/lib/mysql
+   - db_vol:/var/lib/mysql
   env_file: .env
 
  nginx_service:
@@ -22,7 +22,7 @@ services:
   networks:
    - inception_net
   volumes:
-   - wp_vol: /var/www
+   - wp_vol:/var/www
 
  wordpress_service:
   build: ./requirements/wordpress/
@@ -33,7 +33,7 @@ services:
   networks:
    - inception_net
   volumes:
-   - wp_vol: /var/www
+   - wp_vol:/var/www
   env_file: .env
 
 networks:
@@ -45,12 +45,12 @@ volumes:
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/berkam/data/wp'
+   device: '/home/bekram/data/wp'
  
  db_vol:
   driver: local
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/berkam/data/db'
+   device: '/home/bekram/data/db'
 

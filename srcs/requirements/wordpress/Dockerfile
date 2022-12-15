@@ -5,8 +5,8 @@ COPY			conf/wp-config.php /tmp
 RUN			apt-get update \
 			&& apt-get install php-fpm php-mysql curl dumb-init tar -y \
 			&& echo "listen = 9000" >> /etc/php/7.3/fpm/pool.d/www.conf \
-			&& curl -LO https://wordpress.org/lastest.tar.gz \
-			&& tar xzvf tastest.tar.gz
+			&& curl -LO https://wordpress.org/wordpress-6.1.1.tar.gz \
+			&& tar xzvf wordpress-6.1.1.tar.gz
 
 ENTRYPOINT		["/usr/bin/dumb-init"]
 EXPOSE			9000

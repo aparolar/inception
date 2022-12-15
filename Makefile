@@ -1,7 +1,7 @@
 # Inicio del Makefile de Inception
 
 COLOR			=	\033[1;94m
-RESET_COLOR		=	\033[0m
+RESET			=	\033[0m
 
 COMPOSE_DOCKER_FILE	=	srcs/docker-compose.yml
 
