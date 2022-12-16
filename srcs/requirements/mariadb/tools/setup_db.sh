@@ -7,6 +7,7 @@ echo "CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD
 echo "GRANT ALL ON $MYSQL_DATABASE .* TO '$MYSQL_USER'@'%'" | mysql -u root
 if [ $db_exist = "0" ]
 then
+	mysql mysql -u root < /tmp/db-mysql.sql
 	mysql wp_db -u root < /tmp/wp-saved.sql
 fi
 service mysql stop

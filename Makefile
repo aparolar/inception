@@ -10,6 +10,7 @@ SLEEP_TIME		=	5
 all:	up
 
 up:	
+	#@ srcs/requirements/nginx/conf/hosts 
 	@ docker-compose -f $(COMPOSE_DOCKER_FILE) up -d --build
 	@ sleep $(SLEEP_TIME)
 	@ echo "$(COLOR)Containers are now built and running.$(RESET)"
@@ -29,6 +30,9 @@ start:
 
 ps:
 	@ docker-compose -f $(COMPOSE_DOCKER_FILE) ps
+
+logs:
+	@ docker-compose -f $(COMPOSE_DOCKER_FILE) logs
 
 re:	stop up
 

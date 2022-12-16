@@ -1,9 +1,9 @@
 #!bin/bash/
 
-mv wordpress/ /var/www/
-rm latest.tar.gz
+mv -f wordpress /var/www/
+rm wordpress-6.1.1.tar.gz
 
-mv /tmp/wp-config.php /var/www/wordpress
+mv /tmp/wp-config.php /var/www/wordpress/
 chown -R www-data:www-data /var/www/wordpress/
 
 sed -i -e "s|MYSQL_DATABASE|'$MYSQL_DATABASE'|g" /var/www/wordpress/wp-config.php

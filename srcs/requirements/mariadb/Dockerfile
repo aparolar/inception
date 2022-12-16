@@ -3,6 +3,7 @@ FROM		debian:buster
 COPY		tools/setup_db.sh /tmp
 COPY		conf/my.cnf /tmp
 COPY		conf/wp-saved.sql /tmp
+COPY		conf/db-mysql.sql /tmp
 
 RUN		apt-get update \
 		&& apt-get install mariadb-server mariadb-client dumb-init -y \
