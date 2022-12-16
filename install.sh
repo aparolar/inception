@@ -12,7 +12,8 @@ then
 	apt install vim -y &&
 	apt install apt-utils -y &&
 	apt install docker-compose -y &&
-	apt install docker -y;
+	apt install docker -y &&
+	apt install openssh-server -y;
 	echo "packages installed"
 	echo "setting up local ssh service ..."
 	systemctl enable ssh;

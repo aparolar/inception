@@ -47,12 +47,12 @@ volumes:
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/bekram/data/wp'
+   device: '~/data/wp'
  
  db_vol:
   driver: local
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/bekram/data/db'
+   device: '~/data/db'
 
