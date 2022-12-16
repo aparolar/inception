@@ -36,4 +36,11 @@ logs:
 
 re:	stop up
 
+gitpush:
+	git status
+	git add .
+	git status
+	git commit -m "update"
+	git push
+
 .phony:	all up
