@@ -1,5 +1,6 @@
 # Inicio del Makefile de Inception
 # contraseña VM root i18914071i
+# contraseña VM aparolar a18914071a
 
 COLOR			=	\033[1;94m
 RESET			=	\033[0m
