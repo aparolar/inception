@@ -5,6 +5,7 @@
 COLOR			=	\033[1;94m
 RESET			=	\033[0m
 
+USER_HOME		=	/home/aparolar
 COMPOSE_DOCKER_FILE	=	srcs/docker-compose.yml
 DOCKER_CMD		=	docker-compose -f $(COMPOSE_DOCKER_FILE)
 
@@ -13,7 +14,10 @@ SLEEP_TIME		=	5
 all:	up
 
 up:	
-	#@ srcs/requirements/nginx/conf/hosts 
+	#@ srcs/requirements/nginx/conf/hosts
+	@ mkdir "$(USER_HOME)/data"
+	@ mkdir "$(USER_HOME)/data/wp"
+	@ mkdir "$(USER_HOME)/data/db"
 	@ $(DOCKER_CMD) up -d --build
 	@ sleep $(SLEEP_TIME)
 	@ echo "$(COLOR)Containers are now built and running.$(RESET)"
