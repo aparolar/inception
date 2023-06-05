@@ -47,12 +47,12 @@ volumes:
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/aparolar/wp'
+   device: '/home/aparolar/data/wp'
  
  db_vol:
   driver: local
   driver_opts:
    type: 'none'
    o: 'bind'
-   device: '/home/aparolar/db'
+   device: '/home/aparolar/data/db'
 
