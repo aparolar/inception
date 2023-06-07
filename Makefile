@@ -15,13 +15,13 @@ all:	up
 
 up:	
 	if [ ! -f $(USER_HOME)/data ] ; then \
-		@ mkdir "$(USER_HOME)/data" ; \
+		mkdir "$(USER_HOME)/data" ; \
 	fi
 	if [ ! -f $(USER_HOME)/data/wp ] ; then \
-		@ mkdir "$(USER_HOME)/data/wp" ; \
+		mkdir "$(USER_HOME)/data/wp" ; \
 	fi
 	if [ ! -f $(USER_HOME)/data/db ] ; then \
-		@ mkdir "$(USER_HOME)/data/db" ; \
+		mkdir "$(USER_HOME)/data/db" ; \
 	fi
 	@ $(DOCKER_CMD) up -d --build
 	@ sleep $(SLEEP_TIME)
