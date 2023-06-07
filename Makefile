@@ -13,7 +13,7 @@ SLEEP_TIME			=	5
 all:	up
 
 up:	
-	@if [ ! -f $(USER_HOME)/data ] ; then \
+	@if [ -f $(USER_HOME)/data ] ; then \
 		mkdir "$(USER_HOME)/data" ; \
 	fi
 	@if [ ! -f $(USER_HOME)/data/wp ] ; then \
