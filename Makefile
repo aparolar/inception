@@ -47,8 +47,8 @@ rmvols:
 	@ docker volume rm srcs_db_vol
 
 rmimg:
-	for img in $(docker images | awk 'NR > 1 {print $3}')
-	do;
+	for img in $(docker images | awk 'NR > 1 {print $3}');
+	do
 		print "@ docker images rm $(img)"
 	done;
 
