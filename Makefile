@@ -16,10 +16,10 @@ up:
 	@if [ -f $(USER_HOME)/data ] ; then \
 		mkdir "$(USER_HOME)/data" ; \
 	fi
-	@if [ ! -f $(USER_HOME)/data/wp ] ; then \
+	@if [ -f $(USER_HOME)/data/wp ] ; then \
 		mkdir "$(USER_HOME)/data/wp" ; \
 	fi
-	@if [ ! -f $(USER_HOME)/data/db ] ; then \
+	@if [ -f $(USER_HOME)/data/db ] ; then \
 		mkdir "$(USER_HOME)/data/db" ; \
 	fi
 	@ $(DOCKER_CMD) up -d --build
