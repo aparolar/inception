@@ -8,9 +8,7 @@ RUN			apt-get update \
 			&& curl -LO https://wordpress.org/wordpress-6.1.1.tar.gz \
 			&& tar xzvf wordpress-6.1.1.tar.gz
 
-RUN			chmod +x /tmp/setup_wp.sh
-
-RUN			/tmp/setup_wp.sh
+RUN			chmod +x /tmp/setup_wp.sh && /tmp/setup_wp.sh
 #ENTRYPOINT		["/usr/bin/dumb-init"]
 
 EXPOSE			9000
