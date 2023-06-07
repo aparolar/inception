@@ -11,8 +11,9 @@ RUN		apt-get update \
 		&& mv /tmp/my.cnf /etc/mysql/my.cnf \
 		&& chmod 0444 /etc/mysql/my.cnf
 
+RUN		["/tmp/setup_db.sh"]
 #ENTRYPOINT 	["/usr/bin/dumb-init"]
 
 EXPOSE		3306
 
-CMD		["/tmp/setup_db.sh"]
+CMD		["/usr/sbin/mysqld", "-u", "root"]
