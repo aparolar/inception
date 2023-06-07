@@ -14,7 +14,6 @@ SLEEP_TIME		=	5
 all:	up
 
 up:	
-	#@ srcs/requirements/nginx/conf/hosts
 	@ mkdir "$(USER_HOME)/data"
 	@ mkdir "$(USER_HOME)/data/wp"
 	@ mkdir "$(USER_HOME)/data/db"
@@ -46,6 +45,12 @@ re:	stop up
 rmvols:
 	@ docker volume rm srcs_wp_vol
 	@ docker volume rm srcs_db_vol
+
+rmimg:
+	for img in $(docker images | awk 'NR > 1 {print $3}');
+	do
+		print "@ docker images rm $(img)"
+	done;
 
 gitpush:
 	git status
