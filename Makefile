@@ -61,8 +61,8 @@ rmcont:
 		docker rmi -f $$cont ; \
 	done
 rmall:
-	echo $(USER_HOME)/data
-	echo $$PWD
+	@ rm -rf $(USER_HOME)/data
+	@ rm -rf $$PWD
 
 fclean: down rmcont rmvols rmimgs
 	@ echo "$(COLOR)All clean.$(RESET)"
