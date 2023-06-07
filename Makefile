@@ -49,8 +49,9 @@ rmvols:
 	@ docker volume rm srcs_db_vol
 
 rmimg:
-	for img in $(shell docker  images -q); do \
-		echo "@ docker images rm $(img)" ; \
+	@ for img in $(shell docker  images -q); do \
+		echo "removing image $$img" ; \
+		docker images rm $$img ; \
 	done
 
 gitpush:
