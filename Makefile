@@ -61,11 +61,15 @@ rmcont:
 		docker rmi -f $$cont ; \
 	done
 rmall:
+	@ echo "$(COLOR)Erase proyect files.$(RESET)"
 	@ rm -rf $(USER_HOME)/data
 	@ rm -rf $$PWD
 
-fclean: down rmcont rmvols rmimgs
+clean: down rmcont rmvols rmimgs
 	@ echo "$(COLOR)All clean.$(RESET)"
+
+fclean: clean rmall
+
 listimg:
 	docker images
 
