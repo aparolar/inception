@@ -48,7 +48,7 @@ rmvols:
 
 rmimg:
 	IMAGES=$(shell docker images)
-	IMAGES=$(shell awk 'NR > 1 {print $3}' "$(IMAGES)")
+#IMAGES=$(shell awk 'NR > 1 {print $3}' "$(IMAGES)")
 	for img in $(IMAGES); do \
 		printf "@ docker images rm $(img)" \
 	done;
