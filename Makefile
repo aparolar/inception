@@ -50,8 +50,8 @@ rmvols:
 
 rmimg:
 #IMAGES=$(shell awk 'NR > 1 {print $3}' "$(IMAGES)")
-	for img in $(IMAGES); do \
-		printf "@ docker images rm $(img)" \
+	for img in $(IMAGES); do
+		printf "@ docker images rm $(img)"
 	done;
 
 gitpush:
