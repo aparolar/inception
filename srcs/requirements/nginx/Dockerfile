@@ -11,7 +11,7 @@ RUN			openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 \
 			-keyout /etc/ssl/private/aparolar.key -out /etc/ssl/certs/aparolar.crt
 
 COPY			conf/nginx.conf /etc/nginx/
-COPY			conf/hosts /etc/
+#COPY			conf/hosts /etc/
 
 #ENTRYPOINT		["/usr/bin/dumb-init"]
 
