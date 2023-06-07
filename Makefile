@@ -51,7 +51,7 @@ rmvols:
 rmimg:
 	@ for img in $(shell docker  images -q); do \
 		echo "removing image $$img" ; \
-		docker images rm $$img ; \
+		docker images rmi -f $$img ; \
 	done
 
 gitpush:
