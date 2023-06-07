@@ -11,6 +11,9 @@ DOCKER_CMD		=	docker-compose -f $(COMPOSE_DOCKER_FILE)
 
 SLEEP_TIME		=	5
 
+#vars
+IMGAGES=$(shell docker images | awk 'NR > 1 {print $3}')
+
 all:	up
 
 up:	
@@ -47,8 +50,7 @@ rmvols:
 	@ docker volume rm srcs_db_vol
 
 rmimg:
-	IMGAGES=$(docker images | awk 'NR > 1 {print $3}')
-	for img in $IMAGES;
+	for img in $(IMAGES);
 	do
 		print "@ docker images rm $(img)"
 	done;
