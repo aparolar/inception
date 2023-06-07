@@ -50,9 +50,8 @@ rmvols:
 	@ docker volume rm srcs_db_vol
 
 rmimg:
-	for img in $(IMAGES);
-	do
-		print "@ docker images rm $(img)"
+	for img in $(IMAGES); do \
+		printf "@ docker images rm $(img)" \
 	done;
 
 gitpush:
