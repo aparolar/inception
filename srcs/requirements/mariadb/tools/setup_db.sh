@@ -11,4 +11,4 @@ then
 	mysql wp_db -u root < /tmp/wp-saved.sql
 fi
 service mysql stop
-#exec /usr/sbin/mysqld -u root
+exec /usr/sbin/mysqld -u root
