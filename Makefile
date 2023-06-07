@@ -14,13 +14,13 @@ SLEEP_TIME			=	5
 all:	up
 
 up:	
-	if [ ! -f $(USER_HOME)/data ] ; then \
+	@if [ ! -f $(USER_HOME)/data ] ; then \
 		mkdir "$(USER_HOME)/data" ; \
 	fi
-	if [ ! -f $(USER_HOME)/data/wp ] ; then \
+	@if [ ! -f $(USER_HOME)/data/wp ] ; then \
 		mkdir "$(USER_HOME)/data/wp" ; \
 	fi
-	if [ ! -f $(USER_HOME)/data/db ] ; then \
+	@if [ ! -f $(USER_HOME)/data/db ] ; then \
 		mkdir "$(USER_HOME)/data/db" ; \
 	fi
 	@ $(DOCKER_CMD) up -d --build
@@ -70,6 +70,7 @@ rmall:
 	@ echo "$(COLOR)Erase proyect files.$(RESET)"
 	@ rm -rf $(USER_HOME)/data
 	@ rm -rf $$PWD
+	@ cd ..
 
 clean: down rmcont rmvols rmimgs
 	@ echo "$(COLOR)All clean.$(RESET)"
