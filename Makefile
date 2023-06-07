@@ -45,14 +45,28 @@ logs:
 re:	stop up
 
 rmvols:
+	@ echo "$(COLOR)Erase volumes.$(RESET)"
 	@ docker volume rm srcs_wp_vol
 	@ docker volume rm srcs_db_vol
 
-rmimg:
-	@ for img in $(shell docker  images -q); do \
-		echo "removing image $$img" ; \
+rmimgs:
+	@ echo "$(COLOR)Erase images.$(RESET)"
+	@ for img in $(shell docker images -q); do \
+		echo "erasing image $$img" ; \
 		docker rmi -f $$img ; \
 	done
+
+rmcont:
+	@ echo "$(COLOR)Erase containers.$(RESET)"
+	@ for cont in $(shell docker ps -q); do \
+		echo "Erasing container $$cont" ; \
+		docker rmi -f $$cont ; \
+	done
+
+fclean: down rmcont rmvols rmimgs
+	@ echo "$(COLOR)All clean.$(RESET)"
+listimg:
+	docker images
 
 gitpush:
 	git status
