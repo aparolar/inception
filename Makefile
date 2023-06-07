@@ -61,7 +61,7 @@ rmcont:
 		docker rmi -f $$cont ; \
 	done
 rmall:
-	echo $$USER_HOME/data
+	echo $(USER_HOME)/data
 	echo $$PWD
 
 fclean: down rmcont rmvols rmimgs
