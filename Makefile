@@ -14,7 +14,6 @@ SLEEP_TIME			=	5
 all:	up
 
 up:	
-	@ apt-key net-update
 	@ $(DOCKER_CMD) up -d --build
 	@ sleep $(SLEEP_TIME)
 	@ echo "$(COLOR)Containers are now built and running.$(RESET)"
