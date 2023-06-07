@@ -50,7 +50,7 @@ rmvols:
 
 rmimg:
 	for img in $(shell docker  images -q); do \
-		echo "@ docker images rm $(img)" \
+		echo "@ docker images rm $(img)" ; \
 	done
 
 gitpush:
