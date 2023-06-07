@@ -11,7 +11,7 @@ DOCKER_CMD		=	docker-compose -f $(COMPOSE_DOCKER_FILE)
 
 SLEEP_TIME		=	5
 
-IMAGES=$(shell docker images | awk 'NR > 1 {print $3}')
+IMAGES=$(shell bash "docker images | awk 'NR > 1 {print $3}'")
 
 all:	up
 
