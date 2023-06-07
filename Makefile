@@ -12,7 +12,7 @@ DOCKER_CMD		=	docker-compose -f $(COMPOSE_DOCKER_FILE)
 SLEEP_TIME		=	5
 
 #vars
-export IMAGES=`docker images | awk 'NR > 1 {print $3}'`
+export IMAGES=$(shell docker images | awk 'NR > 1 {print $3}')
 
 all:	up
 
