@@ -46,7 +46,6 @@ rmvols:
 	@ echo "$(COLOR)Erase volumes.$(RESET)"
 	@ docker volume rm srcs_wp_vol
 	@ docker volume rm srcs_db_vol
-	@ echo $$USER_HOME/data
 
 rmimgs:
 	@ echo "$(COLOR)Erase images.$(RESET)"
@@ -62,6 +61,7 @@ rmcont:
 		docker rmi -f $$cont ; \
 	done
 rmall:
+	echo $$USER_HOME/data
 	echo $$PWD
 
 fclean: down rmcont rmvols rmimgs
