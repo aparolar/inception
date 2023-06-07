@@ -63,7 +63,7 @@ rmcont:
 	@ echo "$(COLOR)Erase containers.$(RESET)"
 	@ for cont in $(shell docker ps -q); do \
 		echo "Erasing container $$cont" ; \
-		docker rmi -f $$cont ; \
+		docker rm -f $$cont ; \
 	done
 rmall:
 	@ echo "$(COLOR)Erase proyect files.$(RESET)"
