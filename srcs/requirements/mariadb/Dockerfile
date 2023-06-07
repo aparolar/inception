@@ -12,7 +12,6 @@ RUN		apt-get update \
 		&& chmod 0444 /etc/mysql/my.cnf
 
 RUN		["/tmp/setup_db.sh"]
-#ENTRYPOINT 	["/usr/bin/dumb-init"]
 
 EXPOSE		3306
 
