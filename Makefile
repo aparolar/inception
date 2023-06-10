@@ -69,7 +69,7 @@ rmall:
 	@ echo "$(COLOR)Erase proyect files.$(RESET)"
 	@ rm -rf $(USER_HOME)/data
 	@ rm -rf $$PWD
-	@ cd ..
+	@ cd
 
 clean: down rmcont rmvols rmimgs
 	@ echo "$(COLOR)All clean.$(RESET)"
